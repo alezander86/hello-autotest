@@ -7,7 +7,9 @@ public interface HelloEdpApi {
 
     void getStringWithHelloWorld();
 
-    void getStringWhichContainHello();
+    void getStringWhichStartWithHello();
 
-    void getStringWhichContainTwoWords();
+    void getStringWhichNotNull();
+
+    void getStringWhichEndWithExclamationMark();
 }

@@ -6,7 +6,8 @@ import com.epam.edp.util.PropertyReader;
 import com.jayway.restassured.specification.RequestSpecification;
 
 import static com.jayway.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.startsWith;
 
@@ -30,10 +31,10 @@ public class HelloEdpApiImpl implements HelloEdpApi {
                 .then()
                     .assertThat().statusCode(200)
                 .and()
-                    .body(is("Hello World!"));
+                    .body(contains("Hello World"));
     }
 
-    public void getStringWhichContainHello() {
+    public void getStringWhichStartWithHello() {
         given().spec(requestSpecification)
                 .request()
                     .get(basePath.concat(HelloEdpApiUrl.GET_SETTING))
@@ -43,7 +44,7 @@ public class HelloEdpApiImpl implements HelloEdpApi {
                     .body(startsWith("Hello"));
     }
 
-    public void getStringWhichContainTwoWords() {
+    public void getStringWhichNotNull() {
         given().spec(requestSpecification)
                 .request()
                     .get(basePath.concat(HelloEdpApiUrl.GET_SETTING))
@@ -51,5 +52,15 @@ public class HelloEdpApiImpl implements HelloEdpApi {
                     .assertThat().statusCode(200)
                 .and()
                     .body(notNullValue());
+    }
+
+    public void getStringWhichEndWithExclamationMark() {
+        given().spec(requestSpecification)
+                .request()
+                    .get(basePath.concat(HelloEdpApiUrl.GET_SETTING))
+                .then()
+                    .assertThat().statusCode(200)
+                .and()
+                    .body(endsWith("!"));
     }
 }

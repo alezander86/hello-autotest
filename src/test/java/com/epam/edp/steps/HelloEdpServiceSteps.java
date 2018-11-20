@@ -19,11 +19,15 @@ public class HelloEdpServiceSteps {
         helloEdpApi.getStringWithHelloWorld();
     }
 
-    public void shouldGetStringWithWordHello() {
-        helloEdpApi.getStringWhichContainHello();
+    public void shouldGetStringStartWithWordHello() {
+        helloEdpApi.getStringWhichStartWithHello();
     }
 
-    public void shouldGetStringWithTwoWords() {
-        helloEdpApi.getStringWhichContainTwoWords();
+    public void shouldGetStringWhichNotNull() {
+        helloEdpApi.getStringWhichNotNull();
+    }
+
+    public void shouldGetStriEndsWithExclamationMark() {
+        helloEdpApi.getStringWhichEndWithExclamationMark();
     }
 }

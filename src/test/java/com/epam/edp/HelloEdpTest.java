@@ -22,12 +22,17 @@ public class HelloEdpTest extends BaseTest {
     }
 
     @Test
-    public void testGetStringThenContainHello() {
-        helloEdpServiceSteps.shouldGetStringWithWordHello();
+    public void testGetStringStartWithWordHello() {
+        helloEdpServiceSteps.shouldGetStringStartWithWordHello();
     }
 
     @Test
-    public void testGetStringWithTwoWords() {
-        helloEdpServiceSteps.shouldGetStringWithTwoWords();
+    public void testGetStringWhichNotNull() {
+        helloEdpServiceSteps.shouldGetStringWhichNotNull();
+    }
+
+    @Test
+    public void testGetStringEndsWithExclamationMark() {
+        helloEdpServiceSteps.shouldGetStriEndsWithExclamationMark();
     }
 }
