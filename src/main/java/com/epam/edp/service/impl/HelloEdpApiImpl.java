@@ -7,6 +7,7 @@ import com.jayway.restassured.specification.RequestSpecification;
 
 import static com.jayway.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.startsWith;
@@ -31,7 +32,7 @@ public class HelloEdpApiImpl implements HelloEdpApi {
                 .then()
                     .assertThat().statusCode(200)
                 .and()
-                    .body(contains("Hello World"));
+                    .body(containsString("Hello World"));
     }
 
     public void getStringWhichStartWithHello() {
