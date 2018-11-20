@@ -1,0 +1,5 @@
+{
+    "sit": "mvn test -Dendpoint=https://master.demo.edp-epam.com -Dsurefire.suiteXmlFiles=testng-smoke-suite.xml",
+    "qa": "mvn test -Dendpoint=https://master.demo.edp-epam.com -Dsurefire.suiteXmlFiles=testng-smoke-suite.xml",
+    "precommit": "mvn test -Dendpoint=https://master.demo.edp-epam.com -Dsurefire.suiteXmlFiles=testng-smoke-suite.xml"
+}
